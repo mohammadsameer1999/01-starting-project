@@ -1,29 +1,23 @@
 import reactImg from './assets/react-core-concepts.png'
+import componentImg from './assets/components.png'
+import { CORE_CONCEPTS } from './data.js';
 function Header() {
-  return ( <header>
-    <img src="src/assets/image.png" alt="Stylized atom"/>
+  return (<header>
+    <img src={reactImg} alt="Stylized atom" />
     <h1>This is my header</h1>
-  <p>
-    this my paragraph image code for all code
-  </p>
+    <p>
+      this my paragraph image code for all code
+    </p>
   </header>
   );
 }
 
-function AddNumber() {
-const a = 20;
-const b = 40;
-const sum = a + b;
-  console.log("sum is here ----?", sum);
-
-  return (
-   <>
-    sum is : {sum>80 ? "number bada hai" :"number chota hai" }
-    
-   </> 
-    
-
-  );
+function CoreConcept(props) {
+  return <li>
+    <img src={props.img} alt={props.title} />
+    <h3>{props.title}</h3>
+    <p>{props.description}</p>
+  </li>
 }
 
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
@@ -35,10 +29,47 @@ function App() {
   const description = reactDescriptions[genRandomInt(2)]
   return (
     <div>
-      <Header/>
-      <AddNumber/>
-      <header/>
-      <header/>
+      <Header />
+      <Header />
+      <section id="core-concepts">
+        <h2>Core Concepts</h2>
+        <ul>
+          <CoreConcept
+            title={CORE_CONCEPTS[0].title}
+            description={CORE_CONCEPTS[0].description}
+            img={CORE_CONCEPTS[0].image}
+          />
+
+          <CoreConcept
+            title={CORE_CONCEPTS[1].title}
+            description={CORE_CONCEPTS[1].description}
+            img={CORE_CONCEPTS[1].image}
+          />
+
+          <CoreConcept
+            title={CORE_CONCEPTS[2].title}
+            description={CORE_CONCEPTS[2].description}
+            img={CORE_CONCEPTS[2].image}
+          />
+
+          <CoreConcept
+            title={CORE_CONCEPTS[3].title}
+            description={CORE_CONCEPTS[3].description}
+            img={CORE_CONCEPTS[3].image}
+          />
+
+          <CoreConcept
+          title={CORE_CONCEPTS[4].title}
+            description={CORE_CONCEPTS[4].description}
+            img={CORE_CONCEPTS[4].image}
+          //  {...CORE_CONCEPTS[4]} 
+           />
+
+        </ul>
+      </section>
+
+      <header />
+      <header />
       <main>
         <h2>Time to get started!</h2>
       </main>
