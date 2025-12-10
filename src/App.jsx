@@ -1,17 +1,7 @@
-import reactImg from './assets/react-core-concepts.png'
+// import reactImg from './assets/react-core-concepts.png'
 import componentImg from './assets/components.png'
 import { CORE_CONCEPTS } from './data.js';
-function Header() {
-  return (<header>
-    <img src={reactImg} alt="Stylized atom" />
-    <h1>This is my header</h1>
-    <p>
-      this my paragraph image code for all code
-    </p>
-  </header>
-  );
-}
-
+import Header from './components/Header.jsx';
 function CoreConcept(props) {
   return <li>
     <img src={props.img} alt={props.title} />
@@ -20,17 +10,11 @@ function CoreConcept(props) {
   </li>
 }
 
-const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
 function App() {
-  const description = reactDescriptions[genRandomInt(2)]
+  // const description = reactDescriptions[genRandomInt(2)]
   return (
     <div>
-      <Header />
-      <Header />
+    <Header/>
       <section id="core-concepts">
         <h2>Core Concepts</h2>
         <ul>
